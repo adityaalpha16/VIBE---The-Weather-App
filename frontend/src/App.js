@@ -98,7 +98,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [searching, setSearching] = useState(false);
-  const [selectedCity, setSelectedCity] = useState('New York');
+  const [selectedCity, setSelectedCity] = useState('Ballia');
   const [tempUnit, setTempUnit] = useState('C');
   const [activeTab, setActiveTab] = useState('7');
   const [currentTime, setCurrentTime] = useState(new Date());
