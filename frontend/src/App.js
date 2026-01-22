@@ -102,6 +102,7 @@ function App() {
   const [tempUnit, setTempUnit] = useState('C');
   const [activeTab, setActiveTab] = useState('7');
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [backgroundImage, setBackgroundImage] = useState(weatherBackgrounds.Default);
 
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
