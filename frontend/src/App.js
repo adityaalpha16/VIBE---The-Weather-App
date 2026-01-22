@@ -218,7 +218,7 @@ function App() {
                   </div>
                 </div>
 
-                <div className="relative" data-testid="city-search">
+                <div className="relative z-50" data-testid="city-search">
                   <div className="relative">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                     <input
@@ -243,7 +243,7 @@ function App() {
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
-                        className="absolute top-full mt-2 w-full glass-card p-2 z-50 max-h-60 overflow-y-auto scrollbar-thin"
+                        className="absolute top-full mt-2 w-full glass-card p-2 z-[100] max-h-60 overflow-y-auto scrollbar-thin"
                       >
                         {searchResults.map((city, idx) => (
                           <button
@@ -260,7 +260,7 @@ function App() {
                   </AnimatePresence>
                 </div>
 
-                <div className="text-center py-8">
+                <div className="text-center py-8 relative z-10">{/* Added relative z-10 to keep time below dropdown */}
                   <div className="text-8xl font-bold text-white font-['Outfit'] tabular-nums tracking-tighter" data-testid="current-time">
                     {format(currentTime, 'HH:mm')}
                   </div>
