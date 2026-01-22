@@ -285,14 +285,22 @@ function App() {
                         className="absolute top-full mt-2 w-full glass-card p-2 z-[100] max-h-60 overflow-y-auto scrollbar-thin"
                       >
                         {searchResults.map((city, idx) => (
-                          <button
+                          <motion.button
                             key={idx}
                             onClick={() => handleCitySelect(city)}
-                            className="w-full text-left px-4 py-2 rounded-lg hover:bg-white/10 text-white text-sm transition-colors"
+                            whileHover={{ scale: 1.02, backgroundColor: 'rgba(34, 211, 238, 0.1)' }}
+                            whileTap={{ scale: 0.98 }}
+                            className="w-full text-left px-4 py-3 rounded-lg hover:bg-cyan-400/10 text-white text-sm transition-all border border-transparent hover:border-cyan-400/30 cursor-pointer"
                             data-testid={`city-result-${idx}`}
                           >
-                            {city.name}, {city.state && `${city.state}, `}{city.country}
-                          </button>
+                            <div className="flex items-center gap-2">
+                              <MapPin className="w-3 h-3 text-cyan-400" />
+                              <span className="font-medium">{city.name}</span>
+                              <span className="text-slate-400 text-xs">
+                                {city.state && `${city.state}, `}{city.country}
+                              </span>
+                            </div>
+                          </motion.button>
                         ))}
                       </motion.div>
                     )}
