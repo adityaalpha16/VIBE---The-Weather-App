@@ -469,25 +469,34 @@ function App() {
 
             <GlassCard className="p-6 flex-1" data-testid="world-weather-map">
               <h3 className="text-lg font-bold text-white font-['Outfit'] mb-4">World Weather</h3>
-              <div className="relative h-[300px] flex items-center justify-center rounded-xl overflow-hidden bg-gradient-to-br from-indigo-950/50 to-cyan-950/30">
-                <div className="absolute inset-0 opacity-20">
-                  <svg viewBox="0 0 800 400" className="w-full h-full">
-                    <path
-                      d="M100,200 Q200,150 300,200 T500,200 T700,200"
-                      fill="none"
-                      stroke="#22d3ee"
-                      strokeWidth="2"
-                    />
-                    <circle cx="200" cy="170" r="4" fill="#22d3ee" />
-                    <circle cx="400" cy="200" r="4" fill="#818cf8" />
-                    <circle cx="600" cy="180" r="4" fill="#34d399" />
-                  </svg>
-                </div>
-                <div className="relative z-10 text-center">
-                  <TrendingUp className="w-16 h-16 text-cyan-400 mx-auto mb-4" />
-                  <p className="text-slate-300 text-sm">Global weather visualization</p>
-                  <p className="text-slate-400 text-xs mt-2">Real-time data across continents</p>
-                </div>
+              <div className="grid grid-cols-2 gap-3 h-[300px] overflow-y-auto scrollbar-thin">
+                {worldCities.map((city, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: idx * 0.1 }}
+                    onClick={() => setSelectedCity(city.displayName)}
+                    className="glass-card p-4 hover:bg-cyan-400/10 cursor-pointer transition-all border border-transparent hover:border-cyan-400/30"
+                  >
+                    <div className="flex items-start justify-between mb-2">
+                      <div>
+                        <h4 className="text-white font-semibold text-sm">{city.displayName}</h4>
+                        <p className="text-slate-400 text-xs">{city.country}</p>
+                      </div>
+                      <WeatherIcon condition={city.condition} size="w-8 h-8" />
+                    </div>
+                    <div className="text-2xl font-bold text-white font-['Outfit'] tabular-nums">
+                      {convertTemp(city.temperature)}°
+                    </div>
+                    <p className="text-slate-300 text-xs capitalize mt-1">{city.description}</p>
+                  </motion.div>
+                ))}
+                {worldCities.length === 0 && (
+                  <div className="col-span-2 flex items-center justify-center h-full">
+                    <Loader2 className="w-8 h-8 text-cyan-400 animate-spin" />
+                  </div>
+                )}
               </div>
             </GlassCard>
           </div>
