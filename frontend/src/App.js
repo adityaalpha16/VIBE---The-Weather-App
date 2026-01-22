@@ -166,6 +166,7 @@ function App() {
     setSelectedCity(city.name);
     setSearchQuery('');
     setSearchResults([]);
+    setLoading(true); // Show loading immediately when city is selected
   };
 
   const convertTemp = (temp) => {
