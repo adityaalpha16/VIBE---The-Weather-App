@@ -187,9 +187,24 @@ function App() {
     );
   }
 
+  // Dynamic overlay based on weather condition
+  const getOverlayStyle = () => {
+    const condition = weather?.condition || 'Default';
+    const overlays = {
+      Clear: 'from-amber-950/50 via-orange-950/60 to-yellow-950/50',
+      Rain: 'from-slate-950/75 via-blue-950/80 to-slate-900/75',
+      Drizzle: 'from-slate-950/70 via-slate-900/75 to-blue-950/70',
+      Snow: 'from-slate-950/60 via-blue-950/70 to-slate-900/60',
+      Clouds: 'from-slate-950/70 via-slate-900/80 to-indigo-950/70',
+      Thunderstorm: 'from-slate-950/80 via-purple-950/85 to-slate-900/80',
+      Default: 'from-slate-950/70 via-slate-900/80 to-indigo-950/70',
+    };
+    return overlays[condition] || overlays.Default;
+  };
+
   return (
     <div
-      className="min-h-screen relative overflow-hidden"
+      className="min-h-screen relative overflow-hidden transition-all duration-1000"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
@@ -197,7 +212,7 @@ function App() {
         backgroundAttachment: 'fixed',
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950/70 via-slate-900/80 to-indigo-950/70 backdrop-blur-sm" />
+      <div className={`absolute inset-0 bg-gradient-to-br ${getOverlayStyle()} backdrop-blur-sm transition-all duration-1000`} />
 
       <div className="relative z-10 max-w-[1600px] mx-auto p-4 md:p-8 min-h-screen">
         <div className="flex flex-col lg:flex-row gap-6 h-full">
