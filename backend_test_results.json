@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-01-22T06:30:44.539820",
+  "summary": {
+    "tests_run": 9,
+    "tests_passed": 7,
+    "success_rate": 77.77777777777779
+  },
+  "test_results": [
+    {
+      "test_name": "API Root",
+      "endpoint": "",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_size": 31,
+      "response_preview": "{'message': 'Vibes Weather API'}"
+    },
+    {
+      "test_name": "Current Weather by City",
+      "endpoint": "weather/current",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_size": 230,
+      "response_preview": "{'city': 'New York', 'country': 'US', 'temperature': 3.64, 'feels_like': -0.75, 'condition': 'Clouds', 'description': 'overcast clouds', 'humidity': 54, 'pressure': 1018, 'wind_speed': 5.81, 'uv_index..."
+    },
+    {
+      "test_name": "Current Weather by Coordinates",
+      "endpoint": "weather/current",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_size": 230,
+      "response_preview": "{'city': 'New York', 'country': 'US', 'temperature': 3.65, 'feels_like': -0.73, 'condition': 'Clouds', 'description': 'overcast clouds', 'humidity': 54, 'pressure': 1019, 'wind_speed': 5.81, 'uv_index..."
+    },
+    {
+      "test_name": "Current Weather Invalid Params",
+      "endpoint": "weather/current",
+      "method": "GET",
+      "expected_status": 400,
+      "actual_status": 520,
+      "success": false,
+      "response_size": 77,
+      "error": "{\"detail\":\"Error fetching weather: 400: Either city or coordinates required\"}"
+    },
+    {
+      "test_name": "Weather Forecast",
+      "endpoint": "weather/forecast",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_size": 3244,
+      "response_preview": "{'hourly': [{'time': '2026-01-22 09:00:00', 'temperature': 3.15, 'condition': 'Clouds', 'icon': '04n', 'pop': 0.0}, {'time': '2026-01-22 12:00:00', 'temperature': 2.64, 'condition': 'Clouds', 'icon': ..."
+    },
+    {
+      "test_name": "City Search",
+      "endpoint": "weather/cities",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_size": 445,
+      "response_preview": "[{'name': 'New York', 'country': 'US', 'state': 'New York', 'lat': 40.7127281, 'lon': -74.0060152}, {'name': 'New Lenox', 'country': 'US', 'state': 'Illinois', 'lat': 41.5119761, 'lon': -87.9656098}, ..."
+    },
+    {
+      "test_name": "City Search Empty Query",
+      "endpoint": "weather/cities",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 520,
+      "success": false,
+      "response_size": 263,
+      "error": "{\"detail\":\"Error searching cities: Client error '400 Bad Request' for url 'https://api.openweathermap.org/geo/1.0/direct?q=&limit=5&appid=4e5cc3a15e5ebf3b91fc178a3daadf54'\\nFor more information check:"
+    },
+    {
+      "test_name": "Create Status Check",
+      "endpoint": "status",
+      "method": "POST",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_size": 115,
+      "response_preview": "{'id': 'b849ad45-ce82-496c-beed-55070e387922', 'client_name': 'test_client', 'timestamp': '2026-01-22T06:30:44.457552Z'}"
+    },
+    {
+      "test_name": "Get Status Checks",
+      "endpoint": "status",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_size": 117,
+      "response_preview": "[{'id': 'b849ad45-ce82-496c-beed-55070e387922', 'client_name': 'test_client', 'timestamp': '2026-01-22T06:30:44.457552Z'}]"
+    }
+  ]
+}
