@@ -15,10 +15,7 @@ import {
   MapPin,
   Search,
   Loader2,
-  Navigation,
   Home,
-  Settings,
-  User,
   TrendingUp,
 } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts';
