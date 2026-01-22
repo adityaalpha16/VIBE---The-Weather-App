@@ -1,0 +1,136 @@
+{
+  "identity": {
+    "name": "Vibes Weather",
+    "persona": "E1 - The Anti-AI Designer",
+    "tone": "Cinematic, Atmospheric, Premium, Liquid Glass",
+    "theme_strategy": "Dark Mode Only (Deep Midnight to Ice Blue)"
+  },
+  "typography": {
+    "primary_font": "Outfit",
+    "secondary_font": "DM Sans",
+    "usage": {
+      "headings": "Outfit, font-bold, tracking-tight",
+      "body": "DM Sans, font-normal, tracking-normal",
+      "data_display": "Outfit, font-medium, tabular-nums"
+    },
+    "scale": {
+      "h1": "text-6xl md:text-8xl font-bold tracking-tighter",
+      "h2": "text-4xl md:text-5xl font-bold tracking-tight",
+      "h3": "text-2xl md:text-3xl font-semibold",
+      "body": "text-base md:text-lg leading-relaxed",
+      "label": "text-xs md:text-sm uppercase tracking-widest text-muted-foreground"
+    }
+  },
+  "colors": {
+    "palette": {
+      "background": {
+        "base": "#020617",
+        "gradient_start": "#0f172a",
+        "gradient_end": "#1e1b4b"
+      },
+      "glass": {
+        "panel": "bg-white/5 backdrop-blur-xl border-white/10 shadow-2xl",
+        "card": "bg-white/10 backdrop-blur-md border-white/20 shadow-lg hover:bg-white/15 transition-all duration-300",
+        "input": "bg-black/20 backdrop-blur-sm border-white/10 focus:border-cyan-400/50"
+      },
+      "accents": {
+        "primary": "#22d3ee",
+        "secondary": "#818cf8",
+        "success": "#34d399",
+        "warning": "#fbbf24",
+        "danger": "#f87171"
+      },
+      "text": {
+        "primary": "#f8fafc",
+        "secondary": "#94a3b8",
+        "muted": "#64748b"
+      }
+    },
+    "gradients": {
+      "main_bg": "bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950",
+      "card_glow": "bg-gradient-to-br from-white/10 to-white/5",
+      "text_gradient": "bg-clip-text text-transparent bg-gradient-to-r from-cyan-200 to-blue-400"
+    }
+  },
+  "layout": {
+    "grid_system": "Bento Grid (Mode B - High Density)",
+    "structure": {
+      "container": "max-w-[1600px] mx-auto p-4 md:p-8 h-screen overflow-hidden flex flex-col md:flex-row gap-6",
+      "left_panel": "w-full md:w-[350px] flex flex-col gap-6 shrink-0",
+      "center_panel": "flex-1 flex flex-col gap-6 min-w-0",
+      "right_panel": "w-full md:w-[300px] flex flex-col gap-6 shrink-0"
+    },
+    "spacing": {
+      "panel_gap": "gap-6",
+      "card_padding": "p-6",
+      "section_margin": "mb-8"
+    }
+  },
+  "components": {
+    "glass_card": {
+      "base_classes": "rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.36)]",
+      "hover_effect": "hover:bg-white/10 hover:border-white/20 hover:shadow-[0_8px_32px_0_rgba(34,211,238,0.15)] transition-all duration-500"
+    },
+    "weather_icon": {
+      "style": "3D or Animated SVG",
+      "size": "w-16 h-16 or w-32 h-32 for hero"
+    },
+    "charts": {
+      "library": "Recharts",
+      "style": "Minimalist, thin lines, gradient fills, no grid lines or very subtle",
+      "colors": ["#22d3ee", "#818cf8"]
+    },
+    "map": {
+      "library": "react-simple-maps",
+      "style": "Abstract, dark theme, neon highlights for active regions"
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": {
+      "blur_strength": "backdrop-blur-2xl",
+      "border_opacity": "border-white/10",
+      "noise_texture": "Use a subtle SVG noise overlay on the main background to reduce banding"
+    },
+    "shadows": {
+      "glow": "shadow-[0_0_40px_-10px_rgba(34,211,238,0.3)]",
+      "deep": "shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)]"
+    }
+  },
+  "motion": {
+    "library": "Framer Motion",
+    "transitions": {
+      "page_load": "staggerChildren: 0.1",
+      "card_entry": "initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: 'easeOut' }}",
+      "hover": "whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}"
+    }
+  },
+  "assets": {
+    "weather_backgrounds": {
+      "sunny": "https://images.unsplash.com/photo-1731737049505-762518bb6e3d?q=85&w=1920&auto=format&fit=crop",
+      "rainy": "https://images.unsplash.com/photo-1766983025422-74ff44983027?q=85&w=1920&auto=format&fit=crop",
+      "snowy": "https://images.unsplash.com/photo-1768065502722-dd4654c6ac69?q=85&w=1920&auto=format&fit=crop",
+      "cloudy": "https://images.unsplash.com/photo-1767066971763-c2633a2765dc?q=85&w=1920&auto=format&fit=crop",
+      "storm": "https://images.unsplash.com/photo-1759980363311-d38bfed17dfe?q=85&w=1920&auto=format&fit=crop",
+      "default": "https://images.unsplash.com/photo-1683654753898-cc049cc9b511?q=85&w=1920&auto=format&fit=crop"
+    }
+  },
+  "instructions_to_main_agent": [
+    "1. SETUP: Install 'framer-motion', 'recharts', 'lucide-react', 'date-fns', 'clsx', 'tailwind-merge'.",
+    "2. FONTS: Import 'Outfit' and 'DM Sans' from Google Fonts in index.css.",
+    "3. LAYOUT: Implement the 3-column layout (Left, Center, Right) strictly. On mobile, stack them.",
+    "4. GLASSMORPHISM: Create a reusable 'GlassCard' component that applies the base glass classes. ALL containers must use this.",
+    "5. BACKGROUND: The main app container must have the dynamic weather background image with a dark overlay (bg-black/40) to ensure text readability.",
+    "6. CHARTS: Use Recharts for the Hourly Forecast (LineChart) and Monthly Rainfall (BarChart). Style them to match the glass theme (transparent backgrounds, white axis text).",
+    "7. MAP: Create a placeholder or simple SVG map for the 'World Weather' section if a full library is too heavy, but style it with the neon accent colors.",
+    "8. DATA: Mock the weather data initially, but structure the state to easily swap with an API call later.",
+    "9. TABS: Use a custom tab component for the 7-day forecast that looks like floating glass pills.",
+    "10. TESTING: Add data-testid to all interactive elements (search input, tabs, toggle buttons)."
+  ],
+  "universal_guidelines": [
+    "Do not use generic gradients. Use the specified deep midnight gradients.",
+    "Ensure all text on glass backgrounds has sufficient contrast. Use drop-shadow-sm on white text if needed.",
+    "Micro-interactions are mandatory. Buttons should glow on hover.",
+    "No 'Inter' font for headings. Use 'Outfit'.",
+    "Use 'sonner' for any notifications."
+  ]
+}
