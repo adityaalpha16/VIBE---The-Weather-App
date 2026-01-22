@@ -23,28 +23,45 @@
 
 ## 🖼️ Preview
 
-| Live App | Developer |
-|----------|-----------|
-| ![Weather Preview](./frontend/public/preview.png) | <img src="./frontend/public/profile.png" width="180"/> |
+| <img src="./frontend/public/profile.png" width="180"/> |
 
 ---
 
-## ⚡ Features
 
-- 🌍 City search
-- ⏱️ Live weather
-- 📊 Interactive charts
-- 🌙 Auto day/night theme
-- 🎨 Neon UI gradients
-- 📱 Mobile responsive
+## 🚀 Features
 
----
+- 🌍 Search weather by city  
+- ⏱️ Real-time conditions  
+- 📊 Hourly temperature graph  
+- 🌤️ 5-day forecast  
+- 🌙 Day & night dynamic UI  
+- 📱 Fully responsive  
+- ⚡ Fast and lightweight  
 
 ## 🛠 Tech Stack
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=html,css,js,react,tailwind,nodejs" />
 </p>
+## 🛠️ Tech Stack
+
+| Technology | Usage |
+|-----------|--------|
+| **HTML5** | Markup structure |
+| **CSS3 / Tailwind** | Styling & layout |
+| **JavaScript** | App logic |
+| **React** | UI framework |
+| **Recharts** | Graphs & charts |
+| **Lucide Icons** | Icons |
+| **OpenWeather API** | Weather data |
+
+
+VIBE---The-Weather-App/
+│
+├── frontend/      # React UI
+├── backend/       # (if used)
+├── README.md
+└── .gitignore
 
 ---
 
