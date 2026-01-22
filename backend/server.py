@@ -104,6 +104,9 @@ async def get_status_checks():
 @api_router.get("/weather/current")
 async def get_current_weather(city: Optional[str] = None, lat: Optional[float] = None, lon: Optional[float] = None):
     """Get current weather for a city or coordinates"""
+    if not city and (lat is None or lon is None):
+        raise HTTPException(status_code=400, detail="Either city or coordinates required")
+    
     try:
         async with httpx.AsyncClient() as client:
             params = {
@@ -116,8 +119,6 @@ async def get_current_weather(city: Optional[str] = None, lat: Optional[float] =
             elif lat is not None and lon is not None:
                 params["lat"] = lat
                 params["lon"] = lon
-            else:
-                raise HTTPException(status_code=400, detail="Either city or coordinates required")
             
             response = await client.get(
                 "https://api.openweathermap.org/data/2.5/weather",
