@@ -35,6 +35,9 @@ const weatherBackgrounds = {
   Snow: 'https://images.unsplash.com/photo-1768065502722-dd4654c6ac69?q=85&w=1920&auto=format&fit=crop',
   Clouds: 'https://images.unsplash.com/photo-1767066971763-c2633a2765dc?q=85&w=1920&auto=format&fit=crop',
   Thunderstorm: 'https://images.unsplash.com/photo-1759980363311-d38bfed17dfe?q=85&w=1920&auto=format&fit=crop',
+  Fog: 'https://images.unsplash.com/photo-1767066971763-c2633a2765dc?q=85&w=1920&auto=format&fit=crop',
+  Mist: 'https://images.unsplash.com/photo-1767066971763-c2633a2765dc?q=85&w=1920&auto=format&fit=crop',
+  Haze: 'https://images.unsplash.com/photo-1683654753898-cc049cc9b511?q=85&w=1920&auto=format&fit=crop',
   Default: 'https://images.unsplash.com/photo-1683654753898-cc049cc9b511?q=85&w=1920&auto=format&fit=crop',
 };
 
