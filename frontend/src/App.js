@@ -262,6 +262,42 @@ function App() {
       </AnimatePresence>
 
       <div className="relative z-10 max-w-[1600px] mx-auto p-4 md:p-8 min-h-screen">
+        {/* Logo and Title Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-6"
+        >
+          <div className="glass-card p-6 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6 }}
+                className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center shadow-lg shadow-cyan-400/50"
+              >
+                <CloudRain className="w-10 h-10 text-white" strokeWidth={2} />
+              </motion.div>
+              <div>
+                <h1 className="text-4xl font-bold text-white font-['Outfit'] tracking-tight">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-200 to-blue-400">
+                    VIBE
+                  </span>
+                </h1>
+                <p className="text-sm text-slate-400 font-medium tracking-wide">The Weather Vibes</p>
+              </div>
+            </div>
+            <div className="hidden md:flex items-center gap-3">
+              <div className="text-right">
+                <p className="text-xs text-slate-400 uppercase tracking-wider">Feel the Weather</p>
+                <p className="text-lg font-semibold text-cyan-400 font-['Outfit']">
+                  {format(currentTime, 'HH:mm')}
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         <div className="flex flex-col lg:flex-row gap-6 h-full">
           <div className="w-full lg:w-[380px] flex flex-col gap-6 shrink-0">
             <GlassCard className="p-6">
