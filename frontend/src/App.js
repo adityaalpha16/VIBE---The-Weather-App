@@ -640,6 +640,23 @@ function App() {
             </GlassCard>
           </div>
         </div>
+
+        {/* Footer Credit */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="mt-8 pb-4"
+        >
+          <div className="text-center">
+            <p className="text-slate-400 text-sm font-medium">
+              Designed and Developed by{' '}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400 font-semibold">
+                Aditya
+              </span>
+            </p>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
