@@ -576,17 +576,32 @@ function App() {
 
             <GlassCard className="p-4">
               <div className="flex items-center justify-around" data-testid="nav-icons">
-                <button className="p-3 rounded-xl hover:bg-cyan-400/20 transition-all group" data-testid="nav-home">
+                <button 
+                  onClick={() => setSelectedCity('New York')}
+                  className="p-3 rounded-xl hover:bg-cyan-400/20 transition-all group" 
+                  data-testid="nav-home"
+                  title="Reset to New York"
+                >
                   <Home className="w-5 h-5 text-slate-400 group-hover:text-cyan-400" />
                 </button>
-                <button className="p-3 rounded-xl hover:bg-cyan-400/20 transition-all group" data-testid="nav-user">
-                  <User className="w-5 h-5 text-slate-400 group-hover:text-cyan-400" />
+                <button 
+                  onClick={() => setTempUnit(tempUnit === 'C' ? 'F' : 'C')}
+                  className="p-3 rounded-xl hover:bg-cyan-400/20 transition-all group relative" 
+                  data-testid="nav-temp-toggle"
+                  title="Toggle °C/°F"
+                >
+                  <Gauge className="w-5 h-5 text-slate-400 group-hover:text-cyan-400" />
+                  <span className="absolute -top-1 -right-1 text-[10px] font-bold text-cyan-400">
+                    {tempUnit}
+                  </span>
                 </button>
-                <button className="p-3 rounded-xl hover:bg-cyan-400/20 transition-all group" data-testid="nav-navigation">
-                  <Navigation className="w-5 h-5 text-slate-400 group-hover:text-cyan-400" />
-                </button>
-                <button className="p-3 rounded-xl hover:bg-cyan-400/20 transition-all group" data-testid="nav-settings">
-                  <Settings className="w-5 h-5 text-slate-400 group-hover:text-cyan-400" />
+                <button 
+                  onClick={() => window.location.reload()}
+                  className="p-3 rounded-xl hover:bg-cyan-400/20 transition-all group" 
+                  data-testid="nav-refresh"
+                  title="Refresh"
+                >
+                  <TrendingUp className="w-5 h-5 text-slate-400 group-hover:text-cyan-400" />
                 </button>
               </div>
             </GlassCard>
