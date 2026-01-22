@@ -115,7 +115,32 @@ function App() {
 
   useEffect(() => {
     fetchWeather(selectedCity);
+    fetchWorldWeather();
   }, [selectedCity]);
+
+  const fetchWorldWeather = async () => {
+    const cities = [
+      { name: 'London', coords: { lat: 51.5074, lon: -0.1278 } },
+      { name: 'New York', coords: { lat: 40.7128, lon: -74.0060 } },
+      { name: 'Tokyo', coords: { lat: 35.6762, lon: 139.6503 } },
+      { name: 'Sydney', coords: { lat: -33.8688, lon: 151.2093 } },
+      { name: 'Dubai', coords: { lat: 25.2048, lon: 55.2708 } },
+      { name: 'Paris', coords: { lat: 48.8566, lon: 2.3522 } },
+    ];
+
+    try {
+      const weatherPromises = cities.map(city =>
+        axios.get(`${API}/weather/current`, {
+          params: { lat: city.coords.lat, lon: city.coords.lon },
+        }).then(res => ({ ...res.data, displayName: city.name })).catch(() => null)
+      );
+
+      const results = await Promise.all(weatherPromises);
+      setWorldCities(results.filter(Boolean));
+    } catch (error) {
+      console.error('Error fetching world weather:', error);
+    }
+  };
 
   const fetchWeather = async (city) => {
     try {
