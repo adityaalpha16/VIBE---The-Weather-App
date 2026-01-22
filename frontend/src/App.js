@@ -27,11 +27,11 @@ import { format } from 'date-fns';
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
-// Weather backgrounds based on conditions
+// Weather backgrounds based on conditions - More dramatic and distinct
 const weatherBackgrounds = {
-  Clear: 'https://images.unsplash.com/photo-1731737049505-762518bb6e3d?q=85&w=1920&auto=format&fit=crop',
-  Rain: 'https://images.unsplash.com/photo-1766983025422-74ff44983027?q=85&w=1920&auto=format&fit=crop',
-  Drizzle: 'https://images.unsplash.com/photo-1766983025422-74ff44983027?q=85&w=1920&auto=format&fit=crop',
+  Clear: 'https://images.pexels.com/photos/34613802/pexels-photo-34613802.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  Rain: 'https://images.unsplash.com/photo-1765683011450-c2b8dae7b223?q=85&w=1920&auto=format&fit=crop',
+  Drizzle: 'https://images.unsplash.com/photo-1580941675434-e950d3d8a341?q=85&w=1920&auto=format&fit=crop',
   Snow: 'https://images.unsplash.com/photo-1768065502722-dd4654c6ac69?q=85&w=1920&auto=format&fit=crop',
   Clouds: 'https://images.unsplash.com/photo-1767066971763-c2633a2765dc?q=85&w=1920&auto=format&fit=crop',
   Thunderstorm: 'https://images.unsplash.com/photo-1759980363311-d38bfed17dfe?q=85&w=1920&auto=format&fit=crop',
