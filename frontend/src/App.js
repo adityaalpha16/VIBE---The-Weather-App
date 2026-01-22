@@ -172,11 +172,6 @@ function App() {
     return Math.round(temp);
   };
 
-  const backgroundImage =
-    weather?.condition && weatherBackgrounds[weather.condition]
-      ? weatherBackgrounds[weather.condition]
-      : weatherBackgrounds.Default;
-
   if (loading && !weather) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 flex items-center justify-center">
