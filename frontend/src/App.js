@@ -121,6 +121,11 @@ function App() {
       });
       setWeather(response.data);
 
+      // Update background based on weather condition
+      const condition = response.data.condition;
+      const newBackground = weatherBackgrounds[condition] || weatherBackgrounds.Default;
+      setBackgroundImage(newBackground);
+
       const forecastResponse = await axios.get(`${API}/weather/forecast`, {
         params: {
           lat: response.data.lat,
