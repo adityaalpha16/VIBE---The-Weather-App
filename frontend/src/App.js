@@ -574,10 +574,10 @@ function App() {
             <GlassCard className="p-4">
               <div className="flex items-center justify-around" data-testid="nav-icons">
                 <button 
-                  onClick={() => setSelectedCity('New York')}
+                  onClick={() => setSelectedCity('Ballia')}
                   className="p-3 rounded-xl hover:bg-cyan-400/20 transition-all group" 
                   data-testid="nav-home"
-                  title="Reset to New York"
+                  title="Reset to Ballia"
                 >
                   <Home className="w-5 h-5 text-slate-400 group-hover:text-cyan-400" />
                 </button>
