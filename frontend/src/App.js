@@ -200,6 +200,9 @@ function App() {
       Snow: 'from-slate-950/60 via-blue-950/70 to-slate-900/60',
       Clouds: 'from-slate-950/70 via-slate-900/80 to-indigo-950/70',
       Thunderstorm: 'from-slate-950/80 via-purple-950/85 to-slate-900/80',
+      Fog: 'from-slate-950/65 via-slate-900/75 to-cyan-950/70',
+      Mist: 'from-slate-950/65 via-slate-900/75 to-cyan-950/70',
+      Haze: 'from-slate-950/60 via-teal-950/70 to-cyan-950/65',
       Default: 'from-slate-950/70 via-slate-900/80 to-indigo-950/70',
     };
     return overlays[condition] || overlays.Default;
