@@ -221,6 +221,23 @@ function App() {
     >
       <div className={`absolute inset-0 bg-gradient-to-br ${getOverlayStyle()} backdrop-blur-sm transition-all duration-1000`} />
 
+      {/* Loading overlay when fetching new city */}
+      <AnimatePresence>
+        {loading && weather && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 z-50 flex items-center justify-center bg-slate-950/50 backdrop-blur-md"
+          >
+            <div className="glass-card p-6 flex flex-col items-center gap-3">
+              <Loader2 className="w-10 h-10 text-cyan-400 animate-spin" />
+              <p className="text-slate-200 font-medium">Updating weather...</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div className="relative z-10 max-w-[1600px] mx-auto p-4 md:p-8 min-h-screen">
         <div className="flex flex-col lg:flex-row gap-6 h-full">
           <div className="w-full lg:w-[380px] flex flex-col gap-6 shrink-0">
