@@ -21,9 +21,13 @@
 
 ---
 
+
 ## 🖼️ Preview
 
-| <img src="./frontend/public/profile.png" width="180"/> |
+<p align="center">
+  <img src="./frontend/public/profile.png" width="900" />
+</p>
+
 
 ---
 
