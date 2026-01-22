@@ -269,6 +269,9 @@ async def get_forecast(lat: float, lon: float):
 @api_router.get("/weather/cities")
 async def search_cities(q: str):
     """Search for cities"""
+    if not q or not q.strip():
+        raise HTTPException(status_code=400, detail="Search query cannot be empty")
+    
     try:
         async with httpx.AsyncClient() as client:
             response = await client.get(
